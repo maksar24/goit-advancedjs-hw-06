@@ -2,9 +2,16 @@
   Використовуйте generics та інтерфейси, щоб виправити помилку в наступних класах:
 */
 
-class Component {
-  constructor (public props:T) {
+interface InterfaceForComponent<T> {
+  props: T;
+}
 
+interface ComponentProps {
+  title: string;
+}
+
+class Component implements InterfaceForComponent<ComponentProps> {
+  constructor (public props: ComponentProps) {
   }
 }
 
